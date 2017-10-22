@@ -20,3 +20,11 @@ make linux
 ```bash
 sudo make install "INSTALL_TOP=xxx"
 ```
+
+# 通过打补丁来生成liblua.so共享库
+lua-5.3.4 和 lua-5.3.4_so.diff 处于同一级目录下
+```bash
+$ tar -zxf lua-5.3.4.tar.gz
+$ cd lua-5.3.4
+$ patch -p1 < ../lua-5.3.4_so.diff
+```
