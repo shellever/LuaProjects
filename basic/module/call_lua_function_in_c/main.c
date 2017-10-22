@@ -29,7 +29,8 @@ int main(int argc, char *argv[])
 {
 	int sum;
 	// initialize Lua
-	L = lua_open();
+	L = luaL_newstate(); 	// lua 5.3
+	//L = lua_open();  		// lua 5.0
 	// local Lua base libraries
 	luaL_openlibs(L);
 	// load script

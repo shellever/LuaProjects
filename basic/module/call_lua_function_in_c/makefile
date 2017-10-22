@@ -1,12 +1,14 @@
 obj = main.o
-LUAINC = /home/linuxfor/Documents/Lua/source/lua-5.3.4/src
-LUALIB = $(LUAINC)
+LUAINC := /usr/local/include
+LUALIB := /usr/local/lib
 
 main: $(obj)
-	gcc -L $(LUALIB) -llua5.1 -o main $(obj)
+	gcc -o main $(obj) -L $(LUALIB) -llua
+	#gcc -L $(LUALIB) -llua -o main $(obj)
 
 $(obj): main.c
 	gcc -c -I $(LUAINC) -o $(obj) main.c
+
 
 # make clean
 .PHONY: clean
